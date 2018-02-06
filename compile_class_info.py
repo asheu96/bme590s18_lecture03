@@ -44,8 +44,8 @@ def write_data(csv_filenames):
 def check_no_spaces(everyone):
     isSpace = False
     for index, row in everyone.iterrows():
-        teamname = index, row['Team Name']
-        teamname = str(teamname[1])
+        teamname = row['Team Name']
+        teamname = str(teamname)
         if teamname[0] == ' ':
             teamname = teamname[1::]
         if (" " in teamname) == True:
@@ -61,8 +61,8 @@ def check_camel_case(everyone):
     firstIndex = 0
     upperCount = 0
     for index, row in everyone.iterrows():
-        teamname = index, row['Team Name']
-        teamname = teamname[1].strip()
+        teamname = row['Team Name']
+        teamname = teamname.strip()
         for char in teamname:
             if firstIndex == 0 and char.isupper() == False:
                 break
